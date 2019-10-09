@@ -1,0 +1,13 @@
+[
+	{ "s": "GASTOS", "p": [2] },
+	{ "s": "GENERACIÓN", "p": [9] },
+	{ "s": "GENERADO", "p": [10, 9] },
+	{ "s": "GENERAMOS", "p": [10] },
+	{ "s": "GENERAR", "p": [3] },
+	{ "s": "GENERARON", "p": [8] },
+	{ "s": "GENERARÁ", "p": [7] },
+	{ "s": "GENEREMOS", "p": [10] },
+	{ "s": "GOOGLE", "p": [8] },
+	{ "s": "GUARDARÁN", "p": [10] },
+	{ "s": "GUÍA", "p": [2] }
+]

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/sgti.iml" filepath="$PROJECT_DIR$/.idea/sgti.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sinergiadh/.idea/sinergiadh.iml" filepath="$PROJECT_DIR$/../sinergiadh/.idea/sinergiadh.iml" />
     </modules>
   </component>
 </project>
