@@ -6,12 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    @if (session('success'))
+                        @include('alerts.success')
                     @endif
 
                     You are logged in!
@@ -27,12 +24,34 @@
                     Lista de cursos disponibles
                 </div>
                 <div class="card-body">
-                    @foreach($cursos as $curso)
-                        <li>{{ $curso->name }}</li>
-                    @endforeach
+                        <table class="table table-sm">
+                            <thead>
+                            <tr>
+                                <td>id</td>
+                                <td>nombre</td>
+                                <td>description</td>
+                                <td>acción</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($cursos as $curso)
+                            <tr>
+                                <td>{{ $curso->id }}</td>
+                                <td>{{ $curso->name }}</td>
+                                <td><small>{{ $curso->description }}</small></td>
+                                <td>
+                                    <form method="POST" action="{{ route('home.destroy', $curso->id) }}">
+                                        @csrf @method('DELETE')
+                                        <input type="submit" class="btn btn-link" value="Eliminar">
+                                    </form>
+                                </td>
+                            </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-primary btn-sm">Crear curso</button>
+                    <a href="{{ route('home.create') }}" class="btn btn-primary btn-sm">Crear curso</a>
                 </div>
             </div>
         </div>

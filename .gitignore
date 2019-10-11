@@ -13,3 +13,7 @@ npm-debug.log
 yarn-error.log
 .idea/workspace.xml
 .idea/workspace.xml
+storage/.DS_Store
+.idea/php.xml
+.idea/sgti.iml
+.idea/workspace.xml
