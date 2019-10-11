@@ -16,3 +16,9 @@ Route::get('/', 'CoursesController@index');
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/admin/crear', 'HomeController@create')->name('home.create');
+Route::post('/admin/crear', 'HomeController@store')->name('home.store');
+Route::delete('/admin/eliminar/{id}', 'HomeController@destroy')->name('home.destroy');
+
+Route::get('captcha-form', 'CaptchaController@captchaForm');
+Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');

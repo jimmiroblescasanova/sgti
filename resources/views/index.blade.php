@@ -47,9 +47,9 @@
 
                             <!--Card image-->
                             <div class="view overlay">
-                                <img src="{{ asset('storage/docs') . $course->img }}"
+                                <img src="{{ asset('storage/cursos'). '/' . $course->img }}"
                                      class="card-img-top" alt="">
-                                <a href="{{ '/docs/' . $course->link }}"
+                                <a href="{{ '/docs/' . $course->link . '/index.htm' }}"
                                    target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -61,7 +61,8 @@
                                 <h4 class="card-title">{{ $course->name }}</h4>
                                 <!--Text-->
                                 <p class="card-text">{{ $course->description }}</p>
-                                <a href="{{ asset('docs') . $course->link }}" target="_blank" class="btn btn-primary btn-md">Ver online
+                                <a href="{{ '/docs/' . $course->link . '/index.htm' }}" target="_blank"
+                                   class="btn btn-primary btn-md">Ver online
                                     <i class="fas fa-play ml-2"></i>
                                 </a>
                             </div>
