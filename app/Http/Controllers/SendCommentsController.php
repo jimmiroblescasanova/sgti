@@ -23,6 +23,6 @@ class SendCommentsController extends Controller
 
         Mail::to('habannaslim@gmail.com')->send( new SendComments($message) );
 
-        return route('index');
+        return redirect()->route('index');
     }
 }
