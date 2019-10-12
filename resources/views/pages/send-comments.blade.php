@@ -12,15 +12,15 @@
                             @honeypot
                             <div class="form-group">
                                 <label for="name">Nombre:</label>
-                                <input type="text" class="form-control" name="name" value="Jimmi Robles">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="email" value="jimmirobles@hotmail.com">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                             </div>
                             <div class="form-group">
                                 <label for="comments">Comentarios:</label>
-                                <textarea name="comments" class="form-control">Hola mundo!!!</textarea>
+                                <textarea name="comments" class="form-control">{{ old('comments') }}</textarea>
                             </div>
                             <button class="btn btn-primary">Enviar</button>
                         </form>

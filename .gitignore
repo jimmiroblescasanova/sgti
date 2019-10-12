@@ -11,9 +11,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.idea/workspace.xml
-.idea/workspace.xml
+.idea/*
 storage/.DS_Store
-.idea/php.xml
-.idea/sgti.iml
-.idea/workspace.xml
+/public/.htaccess
