@@ -18,10 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    {!! htmlScriptTagJsApiV3([
-        'action' => 'homepage'
-    ]) !!}
 </head>
 <body>
 <div id="app">

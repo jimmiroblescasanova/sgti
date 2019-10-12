@@ -52,7 +52,7 @@
     <!--Copyright-->
     <div class="footer-copyright py-3">
         © 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> Jimmi Robles </a>
+        <a href="{{ config('app.url') }}" target="_blank"> Jimmi Robles </a>
     </div>
     <!--/.Copyright-->
 
