@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'CoursesController@index');
+Route::get('/', 'CoursesController@index')->name('index');
 
 Auth::routes();
 
@@ -22,3 +22,6 @@ Route::delete('/admin/eliminar/{id}', 'HomeController@destroy')->name('home.dest
 
 Route::get('captcha-form', 'CaptchaController@captchaForm');
 Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
+
+Route::get('/comentarios', 'SendCommentsController@index')->name('comments');
+Route::post('/comentarios', 'SendCommentsController@send')->name('comments.send');

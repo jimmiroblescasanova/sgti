@@ -21,8 +21,7 @@
                     manuales de usuario de la paquetería CONTPAQi, para que los usuarios puedan utilizar su sistema de
                     la mejor manera posible.
                 </p>
-                <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                   class="btn btn-outline-white btn-lg">Enviar comentarios
+                <a href="{{ route('comments') }}" class="btn btn-outline-white btn-lg">Enviar comentarios
                     <i class="fas fa-envelope ml-2"></i>
                 </a>
 

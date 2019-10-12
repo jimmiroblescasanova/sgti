@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="http://jimmirobles.tech" target="_blank">
+        <a class="navbar-brand waves-effect" href="{{ config('app.url') }}" target="_blank">
             <strong class="blue-text">JRC</strong>
         </a>
 
