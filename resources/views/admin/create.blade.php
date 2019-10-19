@@ -10,7 +10,7 @@
                     <div class="card-header">Crear un nuevo curso</div>
 
                     <div class="card-body">
-                        <form action="{{ route('home.store') }}" method="POST" enctype="multipart/form-data"
+                        <form action="{{ route('manuals.store') }}" method="POST" enctype="multipart/form-data"
                               autocomplete="off">
                             @csrf
                             <div class="form-group">

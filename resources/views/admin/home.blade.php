@@ -7,10 +7,10 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
+                    Bienvenido, {{ Auth::user()->name }}!
                     @if (session('success'))
                         @include('alerts.success')
                     @endif
-                    Bienvenido, {{ Auth::user()->name }}!
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                                 <td>{{ $curso->name }}</td>
                                 <td><small>{{ $curso->description }}</small></td>
                                 <td>
-                                    <form method="POST" action="{{ route('home.destroy', $curso->id) }}">
+                                    <form method="POST" action="{{ route('manuals.destroy', $curso->id) }}">
                                         @csrf @method('DELETE')
                                         <input type="submit" class="btn btn-link" value="Eliminar">
                                     </form>
@@ -50,7 +50,7 @@
                         </table>
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('home.create') }}" class="btn btn-primary btn-sm">Crear curso</a>
+                    <a href="{{ route('manuals.create') }}" class="btn btn-primary btn-sm">Crear curso</a>
                 </div>
             </div>
         </div>

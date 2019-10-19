@@ -15,13 +15,17 @@ Route::get('/', 'CoursesController@index')->name('index');
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/crear', 'HomeController@create')->name('home.create');
-Route::post('/admin/crear', 'HomeController@store')->name('home.store');
-Route::delete('/admin/eliminar/{id}', 'HomeController@destroy')->name('home.destroy');
-
 Route::get('captcha-form', 'CaptchaController@captchaForm');
 Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
 
 Route::get('/comentarios', 'SendCommentsController@index')->name('comments');
 Route::post('/comentarios', 'SendCommentsController@send')->name('comments.send');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/manual/crear', 'HomeController@create')->name('manuals.create');
+    Route::post('/manual/crear', 'HomeController@store')->name('manuals.store');
+    Route::delete('/manual/eliminar/{id}', 'HomeController@destroy')->name('manuals.destroy');
+
+    Route::get('/usuarios', 'UsersController@index')->name('users');
+});
