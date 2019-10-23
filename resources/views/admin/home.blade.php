@@ -39,7 +39,7 @@
                                 <td>{{ $curso->name }}</td>
                                 <td><small>{{ $curso->description }}</small></td>
                                 <td>
-                                    <form method="POST" action="{{ route('home.destroy', $curso->id) }}">
+                                    <form method="POST" action="{{ route('courses.destroy', $curso->id) }}">
                                         @csrf @method('DELETE')
                                         <input type="submit" class="btn btn-link" value="Eliminar">
                                     </form>
@@ -50,7 +50,7 @@
                         </table>
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('home.create') }}" class="btn btn-primary btn-sm">Crear curso</a>
+                    <a href="{{ route('courses.create') }}" class="btn btn-primary btn-sm">Crear curso</a>
                 </div>
             </div>
         </div>
