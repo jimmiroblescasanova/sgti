@@ -11,8 +11,7 @@
 
                     <div class="card-body">
                         @include('alerts.errors')
-                        <form action="{{ route('courses.store') }}" method="POST" enctype="multipart/form-data"
-                              autocomplete="off">
+                        <form action="{{ route('courses.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group">
                                 <label for="">Nombre:</label>

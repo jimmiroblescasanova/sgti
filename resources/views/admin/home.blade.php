@@ -7,10 +7,10 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
+                    Bienvenido, {{ Auth::user()->name }}!
                     @if (session('success'))
                         @include('alerts.success')
                     @endif
-                    Bienvenido, {{ Auth::user()->name }}!
                 </div>
             </div>
         </div>

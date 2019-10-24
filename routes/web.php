@@ -33,4 +33,5 @@ Route::group([
     Route::get('/usuarios', 'UsersController@index')->name('users');
     Route::patch('/usuarios/{id}', 'UsersController@update')->name('users.update');
     Route::get('/usuarios/{id}/editar', 'UsersController@edit')->name('users.edit');
+
 });
