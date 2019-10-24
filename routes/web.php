@@ -11,21 +11,27 @@
 |
 */
 
-Route::get('/', 'CoursesController@index')->name('index');
+Route::get('/', 'FrontController@index')->name('index');
 
 Auth::routes();
 
-Route::get('captcha-form', 'CaptchaController@captchaForm');
-Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
+// Route::get('captcha-form', 'CaptchaController@captchaForm');
+// Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
 
 Route::get('/comentarios', 'SendCommentsController@index')->name('comments');
 Route::post('/comentarios', 'SendCommentsController@send')->name('comments.send');
 
-Route::prefix('admin')->group(function(){
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/manual/crear', 'HomeController@create')->name('manuals.create');
-    Route::post('/manual/crear', 'HomeController@store')->name('manuals.store');
-    Route::delete('/manual/eliminar/{id}', 'HomeController@destroy')->name('manuals.destroy');
+Route::group([
+	'prefix' => 'admin',
+	'middleware' => ['auth', 'level']
+], function(){
+    Route::get('/', 'CoursesController@index')->name('home');
+    Route::get('/cursos/crear', 'CoursesController@create')->name('courses.create');
+    Route::post('/cursos/crear', 'CoursesController@store')->name('courses.store');
+    Route::delete('/cursos/eliminar/{id}', 'CoursesController@destroy')->name('courses.destroy');
 
     Route::get('/usuarios', 'UsersController@index')->name('users');
+    Route::patch('/usuarios/{id}', 'UsersController@update')->name('users.update');
+    Route::get('/usuarios/{id}/editar', 'UsersController@edit')->name('users.edit');
+
 });
