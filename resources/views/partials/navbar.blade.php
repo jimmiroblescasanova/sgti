@@ -21,7 +21,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 			<!-- Left -->
-			<ul class="nav mr-auto">
+			<ul class="nav nav-pills mr-auto">
 				<li class="nav-item">
 					<a class="nav-link active" href="{{ route('index') }}">Inicio
 						<span class="sr-only">(current)</span>
