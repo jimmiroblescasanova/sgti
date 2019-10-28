@@ -45,6 +45,9 @@
 	                    <li class="nav-item">
 	                        <a href="{{ route('home') }}" class="nav-link {{ setActive('home') }}">Manuales</a>
 	                    </li>
+                        <li class="nav-item">
+                            <a href="{{ route('events.index') }}" class="nav-link {{ setActive('events.*') }}">Eventos</a>
+                        </li>
 	                    <li class="nav-item">
 	                        <a href="{{ route('users') }}" class="nav-link {{ setActive('users') }}">Usuarios</a>
 	                    </li>
@@ -107,5 +110,8 @@
         @yield('content')
     </main>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<!-- Include this after the sweet alert js file -->
+@include('sweet::alert')
 </body>
 </html>

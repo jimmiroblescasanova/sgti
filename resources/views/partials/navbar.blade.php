@@ -22,10 +22,13 @@
 
 			<!-- Left -->
 			<ul class="nav mr-auto">
-				<li class="nav-item">
+				<li class="nav-item nav-pills">
 					<a class="nav-link active" href="{{ route('index') }}">Inicio
-						<span class="sr-only">(current)</span>
+						{{-- <span class="sr-only">(current)</span> --}}
 					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('registration.create') }}">Registro</a>
 				</li>
 			</ul>
 
