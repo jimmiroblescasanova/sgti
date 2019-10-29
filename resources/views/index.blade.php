@@ -24,23 +24,19 @@
      <!--Section: Jumbotron-->
 
      <hr class="my-5">
-
      <!--Section: Cards-->
      <section class="text-center">
-
          <!--Grid row-->
          <div class="row mb-4 wow fadeIn">
             @foreach ($courses as $course)
             <!--Grid column-->
             <div class="col-lg-4 col-md-12 mb-4">
-
                <!--Card-->
                <div class="card">
 
                   <!--Card image-->
                   <div class="view overlay">
-                     <img src="/storage/{{ $course->img }}"
-                     class="card-img-top" alt="">
+                     <img src="/storage/{{ $course->img }}" class="card-img-top" alt="">
                      @if($course->tag === 'private')
                      @auth
                      <a href="{{ '/docs/' . $course->url . '/index.htm' }}"
