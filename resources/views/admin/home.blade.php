@@ -5,24 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Bienvenido, {{ Auth::user()->name }}!</div>
                 <div class="card-body">
-                    Bienvenido, {{ Auth::user()->name }}!
-                    @if (session('success'))
+                    @if ( session('success') )
                         @include('alerts.success')
                     @endif
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Lista de cursos disponibles
-                </div>
-                <div class="card-body">
+                    <div class="table-responsive">
                         <table class="table table-sm">
                             <thead>
                             <tr>
@@ -48,6 +36,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <a href="{{ route('courses.create') }}" class="btn btn-primary btn-sm">Crear curso</a>

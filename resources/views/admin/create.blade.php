@@ -40,6 +40,7 @@
                                 </div>
                             </div>
                             <button class="btn btn-primary">Crear</button>
+                            <a href="{{ route('home') }}" class="btn btn-link">Atrás</a>
                         </form>
                     </div>
                 </div>
