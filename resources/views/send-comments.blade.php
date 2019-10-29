@@ -23,6 +23,7 @@
                                 <textarea name="comments" class="form-control">{{ old('comments') }}</textarea>
                             </div>
                             <button class="btn btn-primary">Enviar</button>
+                            <a href="{{ route('index') }}" class="btn btn-link">Cancelar</a>
                         </form>
                         @include('alerts.errors')
                     </div>
