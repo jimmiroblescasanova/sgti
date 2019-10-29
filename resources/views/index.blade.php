@@ -39,13 +39,13 @@
                      <img src="/storage/{{ $course->img }}" class="card-img-top" alt="">
                      @if($course->tag === 'private')
                      @auth
-                     <a href="{{ '/docs/' . $course->url . '/index.htm' }}"
+                     <a href="{{ '/docs/' . $course->url . '/index.html' }}"
                         target="_blank">
                         @else
                         <a href="{{ route('login') }}">
                             @endauth
                             @else
-                            <a href="{{ '/docs/' . $course->url . '/index.htm' }}"
+                            <a href="{{ '/docs/' . $course->url . '/index.html' }}"
                                 target="_blank">
                                 @endif
                                 <div class="mask rgba-white-slight"></div>
@@ -65,7 +65,7 @@
                       <p class="card-text">{{ $course->description }}</p>
                       @if($course->tag === 'private')
                       @auth
-                      <a href="{{ '/docs/' . $course->url . '/index.htm' }}" target="_blank"
+                      <a href="{{ '/docs/' . $course->url . '/index.html' }}" target="_blank"
                          class="btn btn-primary btn-md">Ver online
                          <i class="fas fa-play ml-2"></i>
                     </a>
@@ -76,7 +76,7 @@
                </a>
                @endauth
                @else
-               <a href="{{ '/docs/' . $course->url . '/index.htm' }}" target="_blank"
+               <a href="{{ '/docs/' . $course->url . '/index.html' }}" target="_blank"
                   class="btn btn-primary btn-md">Ver online
                   <i class="fas fa-play ml-2"></i>
              </a>
