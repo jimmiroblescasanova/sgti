@@ -11,21 +11,14 @@
    <!-- Content -->
    <div class="card-body text-white text-center py-5 px-5 my-5">
 
-      <h1 class="mb-4">
-         <strong>Documentación CONTPAQi</strong>
-    </h1>
-                <!--<p>
-                    <strong>Best & free guide of responsive web design</strong>
-               </p>-->
-               <p class="mb-4">Este proyecto esta creado con la finalidad de compartir la documentación de uso libre y
-                    manuales de usuario de la paquetería CONTPAQi, para que los usuarios puedan utilizar su sistema de
-                    la mejor manera posible.
-               </p>
-               <a href="{{ route('comments') }}" class="btn btn-outline-white btn-lg">Enviar comentarios
-                    <i class="fas fa-envelope ml-2"></i>
-               </a>
+    <h1 class="mb-4"><strong>Documentación CONTPAQi</strong></h1>
 
-          </div>
+     <p class="mb-4">Este proyecto esta creado con la finalidad de compartir la documentación de uso libre y manuales de usuario de la paquetería CONTPAQi, para que los usuarios puedan utilizar su sistema de la mejor manera posible.</p>
+     <a href="{{ route('comments') }}" class="btn btn-outline-white btn-lg">Enviar comentarios
+        <i class="fas fa-envelope ml-2"></i>
+     </a>
+
+    </div>
           <!-- Content -->
      </section>
      <!--Section: Jumbotron-->

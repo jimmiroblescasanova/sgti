@@ -15,11 +15,11 @@ Route::get('/', 'FrontController@index')->name('index');
 
 Auth::routes();
 
-// Route::get('captcha-form', 'CaptchaController@captchaForm');
-// Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
-
 Route::get('/comentarios', 'SendCommentsController@index')->name('comments');
 Route::post('/comentarios', 'SendCommentsController@send')->name('comments.send');
+
+Route::get('registro', 'EventRegistrationController@create')->name('registration.create');
+Route::post('registro', 'EventRegistrationController@store')->name('registration.store');
 
 Route::group([
 	'prefix' => 'admin',
@@ -33,5 +33,9 @@ Route::group([
     Route::get('/usuarios', 'UsersController@index')->name('users');
     Route::patch('/usuarios/{id}', 'UsersController@update')->name('users.update');
     Route::get('/usuarios/{id}/editar', 'UsersController@edit')->name('users.edit');
+
+    Route::resource('/eventos', 'EventsController')
+        ->parameters(['eventos' => 'id'])
+        ->names('events');
 
 });

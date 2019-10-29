@@ -21,11 +21,14 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 			<!-- Left -->
-			<ul class="nav nav-pills mr-auto">
-				<li class="nav-item">
+			<ul class="nav mr-auto">
+				<li class="nav-item nav-pills">
 					<a class="nav-link active" href="{{ route('index') }}">Inicio
-						<span class="sr-only">(current)</span>
+						{{-- <span class="sr-only">(current)</span> --}}
 					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('registration.create') }}">Registro</a>
 				</li>
 			</ul>
 
