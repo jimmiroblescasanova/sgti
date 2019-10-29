@@ -25,7 +25,7 @@
                         <div class="card">
                             <!--Card image-->
                             <div class="view overlay">
-                                <img src="{{ $course->img }}" class="card-img-top" alt="">
+                                <img src="/storage/{{ $course->img }}" class="card-img-top" alt="">
                                 @if($course->tag === 'private')
                                     @auth
                                         <a href="{{ '/docs/' . $course->url . '/index.html' }}" target="_blank"></a>
