@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header">Bienvenido, {{ Auth::user()->name }}!</div>
                 <div class="card-body">
+                    <h5>Lista de manuales</h5>
+                    <hr>
                     @if ( session('success') )
                         @include('alerts.success')
                     @endif
@@ -39,7 +41,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('courses.create') }}" class="btn btn-primary btn-sm">Crear curso</a>
+                    <a href="{{ route('courses.create') }}" class="btn btn-primary btn-block">Crear curso</a>
                 </div>
             </div>
         </div>

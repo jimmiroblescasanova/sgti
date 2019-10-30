@@ -17,26 +17,14 @@
         <!--Section: Cards-->
         <section class="text-center">
         <!--Grid row-->
-            <div class="row mb-4 wow fadeIn">
+            <div class="row mb-4">
                 @foreach ($courses as $course)
                     <!--Grid column-->
                     <div class="col-lg-4 col-md-12 mb-4">
                         <!--Card-->
                         <div class="card">
                             <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/{{ $course->img }}" class="card-img-top" alt="">
-                                @if($course->tag === 'private')
-                                    @auth
-                                        <a href="{{ '/docs/' . $course->url . '/index.html' }}" target="_blank"></a>
-                                    @else
-                                        <a href="{{ route('login') }}"></a>
-                                    @endauth
-                                @else
-                                    <a href="{{ '/docs/' . $course->url . '/index.html' }}" target="_blank"></a>
-                                @endif
-                                {{-- <div class="mask rgba-white-slight"></div> --}}
-                            </div>
+                            <img src="/storage/{{ $course->img }}" class="card-img-top" alt="">
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->

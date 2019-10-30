@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
      <div class="container">
 
-      <a class="navbar-brand" href="{{ url('/') }}">
-          {{ config('app.name', 'Laravel') }}
+      <a class="navbar-brand text-primary" href="{{ url('/') }}">
+          JRC
       </a>
 
       <button class="navbar-toggler"
@@ -21,6 +21,9 @@
               <li class="nav-item">
                   <a class="nav-link {{ setActive('index') }}" href="{{ route('index') }}">Inicio</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link {{ setActive('registration.*') }}" href="{{ route('registration.create') }}">Registro</a>
+              </li>
               @guest
                   <li class="nav-item">
                       <a class="nav-link {{ setActive('login') }}" href="{{ route('login') }}">Identificarse</a>
@@ -32,14 +35,6 @@
                   @endif
               <!-- Authentication Links -->
               @else
-                  @if(Auth::user()->isAdmin())
-                      <li class="nav-item">
-                          <a href="{{ route('home') }}" class="nav-link {{ setActive('home') }}">Manuales</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="{{ route('users') }}" class="nav-link {{ setActive('users') }}">Usuarios</a>
-                      </li>
-                  @endif
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle"
                           href="#"
@@ -54,6 +49,12 @@
 
                       <div class="dropdown-menu"
                           aria-labelledby="navbarDropdown">
+
+                          @if(Auth::user()->isAdmin())
+                              <a href="{{ route('home') }}" class="dropdown-item {{ setActive('home') }}">Manuales</a>
+                              <a href="{{ route('events.index') }}" class="dropdown-item {{ setActive('events.*') }}">Eventos</a>
+                              <a href="{{ route('users') }}" class="dropdown-item {{ setActive('users') }}">Usuarios</a>
+                            @endif
 
                           <a class="dropdown-item"
                               href="{{ route('logout') }}"

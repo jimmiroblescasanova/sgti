@@ -71,6 +71,7 @@
                             @include('alerts.form-error', ['campo'=>'telefono'])
                     </div>
                     <button class="btn btn-primary btn-block">Registrarme</button>
+                    <a href="{{ route('index') }}" class="btn btn-link btn-block">Atrás</a>
                 </form>
                 {{-- End form --}}
             </div>
