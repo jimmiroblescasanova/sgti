@@ -28,7 +28,8 @@
 									<option value="1" {{ ($usuario->level==1) ? 'selected' : '' }}>Admin</option>
 								</select>
 							</div>
-							<button class="btn btn-primary">Actualizar</button>
+							<button class="btn btn-primary btn-block">Actualizar</button>
+							<a href="{{ route('users') }}" class="btn btn-link btn-block">Cancelar</a>
 						</form>
 					</div>
 				</div>

@@ -39,8 +39,8 @@
                                     <label class="custom-file-label" for="customFile">Seleccionar imagen</label>
                                 </div>
                             </div>
-                            <button class="btn btn-primary">Crear</button>
-                            <a href="{{ route('home') }}" class="btn btn-link">Atrás</a>
+                            <button class="btn btn-primary btn-block">Crear</button>
+                            <a href="{{ route('home') }}" class="btn btn-link btn-block">Atrás</a>
                         </form>
                     </div>
                 </div>

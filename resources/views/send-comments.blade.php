@@ -12,20 +12,29 @@
                             @honeypot
                             <div class="form-group">
                                 <label for="name">Nombre:</label>
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input class="form-control shadow-sm @error('name') is-invalid @enderror"
+                                type="text"
+                                name="name"
+                                value="{{ old('name') }}">
+                                @include('alerts.form-error', ['campo'=>'name'])
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input class="form-control shadow-sm @error('email') is-invalid @enderror"
+                                type="email"
+                                name="email"
+                                value="{{ old('email') }}">
+                                @include('alerts.form-error', ['campo'=>'email'])
                             </div>
                             <div class="form-group">
                                 <label for="comments">Comentarios:</label>
-                                <textarea name="comments" class="form-control">{{ old('comments') }}</textarea>
+                                <textarea class="form-control shadow-sm @error('comments') is-invalid @enderror"
+                                name="comments">{{ old('comments') }}</textarea>
+                                @include('alerts.form-error', ['campo'=>'comments'])
                             </div>
-                            <button class="btn btn-primary">Enviar</button>
-                            <a href="{{ route('index') }}" class="btn btn-link">Cancelar</a>
+                            <button class="btn btn-primary btn-block">Enviar</button>
+                            <a href="{{ route('index') }}" class="btn btn-link btn-block">Cancelar</a>
                         </form>
-                        @include('alerts.errors')
                     </div>
                 </div>
             </div>

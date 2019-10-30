@@ -52,7 +52,7 @@
                             >Eliminar</a>
                         @endif
                         <a href="{{ route('events.index') }}"
-                            class="btn btn-info btn-block">Atrás</a>
+                            class="btn btn-link btn-block">Atrás</a>
                         <form action="{{ route('events.destroy', $evento )}}"
                             id="eliminar"
                             method="POST"

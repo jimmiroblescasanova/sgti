@@ -179,6 +179,7 @@ return [
         'subject'               => 'asunto',
         'message'               => 'mensaje',
         'price'                 => 'precio',
-        'img'						  => 'imagen',
+        'img'				    => 'imagen',
+        'comments'              => 'comentarios',
     ],
 ];

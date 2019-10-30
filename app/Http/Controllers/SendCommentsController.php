@@ -21,6 +21,9 @@ class SendCommentsController extends Controller
             'comments' => 'required|min:10'
         ]);
 
+        alert()->success('Gracias por tus comentarios.')
+               ->persistent('Cerrar');
+
         Mail::to('habannaslim@gmail.com')->send( new SendComments($message) );
 
         return redirect()->route('index');
