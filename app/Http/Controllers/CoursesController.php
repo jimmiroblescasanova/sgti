@@ -12,14 +12,14 @@ class CoursesController extends Controller
 
 	public function index()
 	{
-		return view('admin.home', [
+		return view('courses.index', [
 			'cursos' => Course::get()
 		]);
 	}
 
     public function create()
     {
-        return view('admin.create');
+        return view('courses.create');
     }
 
     public function store(CreateCourseRequest $request)
@@ -30,8 +30,15 @@ class CoursesController extends Controller
 
         $curso->save();
 
-        return redirect()->route('home')
+        return redirect()->route('courses.index')
             ->with('success', 'Creado correctamente');
+    }
+
+    public function show($id)
+    {
+        return view('courses.show', [
+            'curso' => Course::find($id)
+        ]);
     }
 
     public function destroy(Course $id)
@@ -40,7 +47,7 @@ class CoursesController extends Controller
 
         $id->delete();
 
-        return redirect()->route('home')
+        return redirect()->route('courses.index')
             ->with('success', 'Eliminado correctamente');
     }
 }

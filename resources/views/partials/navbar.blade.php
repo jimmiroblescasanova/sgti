@@ -22,7 +22,7 @@
                   <a class="nav-link {{ setActive('index') }}" href="{{ route('index') }}">Inicio</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link {{ setActive('registration.*') }}" href="{{ route('registration.create') }}">Registro</a>
+                  <a class="nav-link {{ setActive('calendar') }}" href="{{ route('calendar') }}">Calendario</a>
               </li>
               @guest
                   <li class="nav-item">
@@ -51,7 +51,7 @@
                           aria-labelledby="navbarDropdown">
 
                           @if(Auth::user()->isAdmin())
-                              <a href="{{ route('home') }}" class="dropdown-item {{ setActive('home') }}">Manuales</a>
+                              <a href="{{ route('courses.index') }}" class="dropdown-item {{ setActive('courses.*') }}">Manuales</a>
                               <a href="{{ route('events.index') }}" class="dropdown-item {{ setActive('events.*') }}">Eventos</a>
                               <a href="{{ route('users') }}" class="dropdown-item {{ setActive('users') }}">Usuarios</a>
                             @endif

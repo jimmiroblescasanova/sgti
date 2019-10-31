@@ -9,7 +9,7 @@ class FrontController extends Controller
 {
     //
     public function index(){
-        return view('index', [
+        return view('front.index', [
             'courses' => DB::table('courses')->paginate(9)
         ]);
     }
