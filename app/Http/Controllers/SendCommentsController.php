@@ -10,7 +10,7 @@ class SendCommentsController extends Controller
 {
     public function index()
     {
-        return view('send-comments');
+        return view('front.send-comments');
     }
 
     public function send(Request $request)

@@ -9,17 +9,9 @@
                     method="POST"
                     autocomplete="off">
                     @csrf
-                    <h2>Registro para evento</h2>
+                    <input type="hidden" name="event_id" value="{{ $id_evento }}">
+                    <h2>Registrarme al evento seleccionado</h2>
                     <hr>
-                    <div class="form-group">
-                        <label for="evento">Selecciona un evento:</label>
-                            <select class="form-control" id="evento" name="event_id">
-                                @foreach($eventos as $evento)
-                                    <option value="{{ $evento->id }}"
-                                        >{{ $evento->nombre }} ( {{ $evento->fecha->diffForHumans() }} )</option>
-                                @endforeach
-                            </select>
-                    </div>
                     <div class="form-group">
                         <label for="nombre">Nombre(s):</label>
                         <input class="form-control bg-light shadow-sm @error('nombre') is-invalid @else border-0 @enderror"
@@ -71,7 +63,7 @@
                             @include('alerts.form-error', ['campo'=>'telefono'])
                     </div>
                     <button class="btn btn-primary btn-block">Registrarme</button>
-                    <a href="{{ route('index') }}" class="btn btn-link btn-block">Atrás</a>
+                    <a href="{{ route('calendar') }}" class="btn btn-link btn-block">Atrás</a>
                 </form>
                 {{-- End form --}}
             </div>

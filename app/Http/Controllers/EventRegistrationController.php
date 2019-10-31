@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Mail;
 class EventRegistrationController extends Controller
 {
     //
-     public function create()
+     public function create($id)
      {
           return view('registration.index', [
+               'id_evento' => $id,
                'eventos' => Event::where('inactivo', 0)
                     ->get()
           ]);

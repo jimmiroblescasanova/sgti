@@ -8,6 +8,15 @@ use App\Http\Requests\EventRequest;
 
 class EventsController extends Controller
 {
+    public function home()
+    {
+        return view('front.calendar', [
+            'primero' => Event::where('inactivo', 0)->
+                orderBy('fecha', 'asc')
+                ->first(),
+            'eventos' => Event::orderBy('fecha', 'desc')->paginate(12)
+        ]);
+    }
 
     public function index()
     {
@@ -16,7 +25,7 @@ class EventsController extends Controller
         ]);
     }
 
-    public function create()
+    public function create($id)
     {
         return view('events.create');
     }
