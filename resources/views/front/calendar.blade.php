@@ -14,11 +14,15 @@
             <div class="col-12 col-lg-4 col-md-4">
                 <h3>Próximo evento:</h3>
                 <div class="card">
-                    <img src="/img/event-cover-default.jpg" class="card-img-top" alt="...">
+                    <img src="/img/event-cover-default.jpg" class="card-img-top" alt="evento">
                     <div class="card-body">
+                    @if( !empty($primero) )
                         <h5 class="card-title">{{ $primero->nombre }}</h5>
                         <p class="card-text">Fecha: {{ $primero->fecha->diffForHumans() }}</p>
                         <a href="{{ route('registration.create', $primero->id) }}" class="btn btn-primary btn-block">Registrarme</a>
+                    @else
+                        <p>No existe ningún evento próximo.</p>
+                    @endif
                     </div>
                 </div>
             </div>
