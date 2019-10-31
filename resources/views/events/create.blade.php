@@ -22,6 +22,7 @@
                                 <input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}">
                             </div>
                             <button class="btn btn-primary btn-block">Crear</button>
+                            <a href="{{ route('events.index') }}" class="btn btn-link btn-block">Cancelar</a>
                         </form>
                     </div>
                 </div>

@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <button class="btn btn-primary btn-block">Crear</button>
-                            <a href="{{ route('courses.index') }}" class="btn btn-link btn-block">Atrás</a>
+                            <a href="{{ route('courses.index') }}" class="btn btn-link btn-block">Cancelar</a>
                         </form>
                     </div>
                 </div>

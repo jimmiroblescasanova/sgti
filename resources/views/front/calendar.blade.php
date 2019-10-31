@@ -25,7 +25,7 @@
         </div>
         <hr>
         <h2 class="mb-4">Todos los eventos:</h2>
-        @foreach($eventos->chunk(4) as $chunk)
+        @forelse($eventos->chunk(4) as $chunk)
             <div class="row">
                 @foreach($chunk as $evento)
                 <div class="col-12 col-lg-3 col-md-6 mb-3">
@@ -40,7 +40,17 @@
                 </div>
                 @endforeach
             </div>
-        @endforeach
+        @empty
+            <div class="row">
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>No existe ningún registro por el momento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforelse
         <div class="row col-12 justify-content-center">
             {{ $eventos->links() }}
         </div>
