@@ -10,7 +10,9 @@ class FrontController extends Controller
     //
     public function index(){
         return view('front.index', [
-            'courses' => DB::table('courses')->paginate(9)
+            'courses' => DB::table('courses')
+               ->orderBy('created_at', 'DESC')
+               ->paginate(9)
         ]);
     }
 }
