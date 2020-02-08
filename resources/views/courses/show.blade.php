@@ -40,7 +40,7 @@
     <script>
         function deleteConfirmation() {
             event.preventDefault();
-            swal({
+            Swal.fire({
               title: "Estas seguro?",
               text: "Una vez eliminado, no se podrá recuperar!",
               icon: "warning",

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\EventRegistration;
 use App\Http\Requests\EventRequest;
+use Illuminate\Support\Str;
 
 class EventsController extends Controller
 {
@@ -32,7 +33,12 @@ class EventsController extends Controller
 
     public function store(EventRequest $request)
     {
-        Event::create( $request->validated() );
+        $evento = new Event();
+
+        $evento->nombre = $request->nombre;
+        $evento->fecha = $request->fecha;
+        $evento->slug = Str::slug($request->nombre, '-');
+        $evento->save();
 
         return redirect()->route('events.index')
             ->with('success', 'Creado correctamente');
@@ -55,7 +61,10 @@ class EventsController extends Controller
 
     public function update(EventRequest $request, Event $id)
     {
-        $id->update( $request->validated() );
+        $id->nombre = $request->nombre;
+        $id->fecha = $request->fecha;
+        $id->slug = Str::slug($request->nombre, '-');
+        $id->save();
 
         return redirect()->route('events.show', $id)
             ->with('success', 'Actualizado correctamente');

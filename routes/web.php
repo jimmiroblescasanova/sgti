@@ -20,7 +20,7 @@ Route::post('/comentarios', 'SendCommentsController@send')->name('comments.send'
 
 Route::get('calendario', 'EventsController@home')->name('calendar');
 
-Route::get('registro/{id}', 'EventRegistrationController@create')->name('registration.create');
+Route::get('registro/{slug}', 'EventRegistrationController@create')->name('registration.create');
 Route::post('registro', 'EventRegistrationController@store')->name('registration.store');
 
 Route::group([

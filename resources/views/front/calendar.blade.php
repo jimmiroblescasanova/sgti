@@ -19,7 +19,7 @@
                     @if( !empty($primero) )
                         <h5 class="card-title">{{ $primero->nombre }}</h5>
                         <p class="card-text">Fecha: {{ $primero->fecha->diffForHumans() }}</p>
-                        <a href="{{ route('registration.create', $primero->id) }}" class="btn btn-primary btn-block">Registrarme</a>
+                        <a href="{{ route('registration.create', $primero->slug) }}" class="btn btn-primary btn-block">Registrarme</a>
                     @else
                         <p>No existe ningún evento próximo.</p>
                     @endif
@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $evento->nombre }}</h5>
                             <p class="card-text">Fecha del evento: {{ $evento->fecha->format('d/m/Y') }}</p>
-                            <a href="{{ route('registration.create', $evento->id) }}" class="btn btn-primary btn-block {{ ($evento->inactivo===1) ? 'disabled' : '' }}">Registrarme</a>
+                            <a href="{{ route('registration.create', $evento->slug) }}" class="btn btn-primary btn-block {{ ($evento->inactivo===1) ? 'disabled' : '' }}">Registrarme</a>
                         </div>
                     </div>
                 </div>
