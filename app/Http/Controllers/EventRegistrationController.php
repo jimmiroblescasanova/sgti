@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\EventRegistration;
+use App\Exports\EventRegistrationsExport;
 use App\Http\Requests\CreateEventRegistrationRequest;
 use App\Mail\RegistrationSuccess;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EventRegistrationController extends Controller
 {
@@ -34,5 +36,10 @@ class EventRegistrationController extends Controller
                ->persistent('Cerrar');
 
           return redirect()->route('index');
+     }
+
+     public function export($id)
+     {
+         return (new EventRegistrationsExport)->evento($id)->download('registro.xlsx');
      }
 }

@@ -40,5 +40,5 @@ Route::group([
     Route::resource('/eventos', 'EventsController')
         ->parameters(['eventos' => 'id'])
         ->names('events');
-
+    Route::get('/eventos/{id}/descargar', 'EventRegistrationController@export')->name('events.download');
 });

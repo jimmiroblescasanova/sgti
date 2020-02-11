@@ -17,6 +17,7 @@
                         @endif
                         <h4>Evento: {{ $evento->nombre }}</h4>
                         <small>Fecha: {{ $evento->fecha->format('d-m-Y') }}</small>
+                            <p><a href="{{ route('events.download', $evento->id) }}">Descargar XLS</a></p>
                         <hr>
                         <div class="table-responsive">
                             <table class="table table-sm">
