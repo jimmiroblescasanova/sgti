@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\EventRegistration;
-use App\Http\Requests\EventRequest;
 use Illuminate\Support\Str;
+use App\Http\Requests\EventRequest;
 
 class EventsController extends Controller
 {
@@ -13,7 +13,7 @@ class EventsController extends Controller
     {
         return view('front.calendar', [
             'primero' => Event::where('inactivo', 0)->
-                orderBy('fecha', 'asc')
+            orderBy('fecha', 'asc')
                 ->first(),
             'eventos' => Event::orderBy('fecha', 'desc')->paginate(12)
         ]);
@@ -65,7 +65,9 @@ class EventsController extends Controller
         $id->fecha = $request->fecha;
         $id->slug = Str::slug($request->nombre, '-');
         $id->inactivo = $request->inactivo;
-        $id->image = $request->file('image')->store('events');
+        if ($request->file('image')) {
+            $id->image = $request->file('image')->store('events');
+        }
         $id->save();
 
         return redirect()->route('events.show', $id)
