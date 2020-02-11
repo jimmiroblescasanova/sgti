@@ -4,21 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\EventRegistration;
-use App\Http\Requests\CreateEventRegistrationRequest;
 use App\Mail\RegistrationSuccess;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\CreateEventRegistrationRequest;
 
 class EventRegistrationController extends Controller
 {
     //
      public function create($slug)
      {
-         $evento = Event::where('slug', '=', $slug)->firstOrFail();
-
           return view('registration.index', [
-               'id_evento' => $evento->id,
-               'eventos' => Event::where('inactivo', 0)
-                    ->get()
+               'event' => Event::where('slug', '=', $slug)->firstOrFail(),
           ]);
      }
 
