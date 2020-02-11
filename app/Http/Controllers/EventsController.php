@@ -64,6 +64,8 @@ class EventsController extends Controller
         $id->nombre = $request->nombre;
         $id->fecha = $request->fecha;
         $id->slug = Str::slug($request->nombre, '-');
+        $id->inactivo = $request->inactivo;
+        $id->image = $request->file('image')->store('events');
         $id->save();
 
         return redirect()->route('events.show', $id)

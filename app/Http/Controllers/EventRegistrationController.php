@@ -15,12 +15,8 @@ class EventRegistrationController extends Controller
     //
      public function create($slug)
      {
-         $evento = Event::where('slug', '=', $slug)->firstOrFail();
-
           return view('registration.index', [
-               'id_evento' => $evento->id,
-               'eventos' => Event::where('inactivo', 0)
-                    ->get()
+               'event' => Event::where('slug', '=', $slug)->firstOrFail(),
           ]);
      }
 
