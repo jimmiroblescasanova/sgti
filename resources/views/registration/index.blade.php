@@ -14,7 +14,7 @@
                       method="POST"
                       autocomplete="off">
                     @csrf
-                    <input type="hidden" name="event_id" value="{{ $event->id_evento }}">
+                    <input type="hidden" name="event_id" value="{{ $event->id }}">
                     <h2>Registrarme al evento seleccionado</h2>
                     <hr>
                     <div class="form-group">

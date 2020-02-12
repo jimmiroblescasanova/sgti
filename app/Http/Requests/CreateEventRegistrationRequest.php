@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateEventRegistrationRequest extends FormRequest
@@ -26,10 +27,14 @@ class CreateEventRegistrationRequest extends FormRequest
         return [
             'nombre' => 'required',
             'apellidos' => 'required',
-            'correo' => 'required|email',
             'empresa' => 'required',
             'telefono' => 'required|digits:10',
-            'event_id' => '',
+            'event_id' => 'exists:events,id',
+            'correo' => [
+                'required',
+                Rule::unique('event_registrations', 'correo')->where(function ($query) {
+                    return $query->where('event_id', '=', $this->input('event_id'));
+                })],
         ];
     }
 }

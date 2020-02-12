@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\EventRegistration;
-use App\Exports\EventRegistrationsExport;
-use App\Http\Requests\CreateEventRegistrationRequest;
 use App\Mail\RegistrationSuccess;
 use Illuminate\Support\Facades\Mail;
-use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\EventRegistrationsExport;
+use App\Http\Requests\CreateEventRegistrationRequest;
 
 class EventRegistrationController extends Controller
 {
@@ -22,7 +21,7 @@ class EventRegistrationController extends Controller
 
      public function store(CreateEventRegistrationRequest $request)
      {
-          EventRegistration::create( $request->validated() );
+         EventRegistration::create( $request->validated() );
 
           Mail::to( $request->correo )
                ->bcc('jimmirobles@hotmail.com')
