@@ -14,23 +14,25 @@
             </div>
             <div class="col-12 col-lg-4 col-md-4 col-sm-12">
                 <h3>Próximo evento:</h3>
-                <div class="card">
-                    @if ($primero->image)
-                        <img src="/storage/{{ $primero->image }}" class="img-fluid">
-                    @else
-                        <img src="/img/event-cover-default.jpg" class="card-img-top" alt="evento">
-                    @endif
-                    <div class="card-body">
-                        @if( !empty($primero) )
-                            <h5 class="card-title">{{ $primero->nombre }}</h5>
-                            <p class="card-text">Fecha: {{ $primero->fecha->format('d/m/Y') }}</p>
-                            <a href="{{ route('registration.create', $primero->slug) }}"
-                               class="btn btn-primary btn-block">Registrarme</a>
+                @if(!empty($primero))
+                    <div class="card">
+                        @if ($primero->image)
+                            <img src="/storage/{{ $primero->image }}" class="img-fluid">
                         @else
-                            <p>No existe ningún evento próximo.</p>
+                            <img src="/img/event-cover-default.jpg" class="card-img-top" alt="evento">
                         @endif
+                        <div class="card-body">
+                            @if( !empty($primero) )
+                                <h5 class="card-title">{{ $primero->nombre }}</h5>
+                                <p class="card-text">Fecha: {{ $primero->fecha->format('d/m/Y') }}</p>
+                                <a href="{{ route('registration.create', $primero->slug) }}"
+                                   class="btn btn-primary btn-block">Registrarme</a>
+                            @else
+                                <p>No existe ningún evento próximo.</p>
+                            @endif
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
         <hr>
@@ -49,8 +51,8 @@
                                 <h5 class="card-title">{{ $evento->nombre }}</h5>
                                 <p class="card-text">Fecha del evento: {{ $evento->fecha->format('d/m/Y') }}</p>
                                 @if (!$evento->inactivo)
-                                <a href="{{ route('registration.create', $evento->slug) }}"
-                                   class="btn btn-block btn-primary">Registrarme</a>
+                                    <a href="{{ route('registration.create', $evento->slug) }}"
+                                       class="btn btn-block btn-primary">Registrarme</a>
                                 @endif
                             </div>
                         </div>
